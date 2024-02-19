@@ -1,25 +1,28 @@
 <script>
   import { FolderHelper } from '../inc/folderHelper';
-  export let notes = [];
+  export let filteredNotes = [];
   export let textAreaContent = '';
+  export let noteName = '';
 
   const folderHelper = new FolderHelper();
 
+
+
   const deleteNote = note => {
-    notes = notes.filter(file => file !== note);
+    filteredNotes = filteredNotes.filter(file => file !== note);
     folderHelper.deleteNote(note);
     console.log(note + ' has been delete');
   };
 
-  const loadNote = async noteName => {
-    textAreaContent = await folderHelper.readNote(noteName);
-    console.log(textAreaContent);
+  const loadNote = async note => {
+    textAreaContent = await folderHelper.readNote(note);
+    noteName = note;   
   };
 </script>
 
 <aside>
   <ul>
-    {#each notes as note (note)}
+    {#each filteredNotes as note (note)}
       <li class="note-item">
         <span on:click={() => loadNote(note)}>
           {note.split('.').slice(0, -1).join('.')}

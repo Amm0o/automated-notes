@@ -1,0 +1,23 @@
+Notes:
+
+=========================================
+ISSUE DESCRIPTION (and impacted Resources)
+Cx:
+<Descirption>
+++++++++++++++++++++++
+CASE NOTES SUMMARY (Historical data of steps taken & results)
+<CurrentDate> <Action Taken>
+-------------------------------
+++++++++++++++++++++++
+MDE details:
+Machine ID:
+Org ID:
+++++++++++++++++++++++
+ACTION PLAN
+<What will be done next>
+++++++++++++++++++++++
+NEXT ACTION PENDING ON (Customer/Engineer) 
+Customer
+++++++++++++++++++++++
+NEXT CONTACT <NextBusinessDay>
+++++++++++++++++++++++

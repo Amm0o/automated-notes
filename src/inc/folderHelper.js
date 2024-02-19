@@ -17,7 +17,9 @@ export class FolderHelper {
     const entries = await readDir(casesDirPath);
 
     for (const entry of entries) {
-      folders.push(entry.name);
+      if (entry.name && entry.name.trim() !== ''){
+        folders.push(entry.name);
+      }
     }
 
     return folders;
@@ -48,6 +50,22 @@ export class FolderHelper {
     } catch (error) {
       console.error('There was an error saving the note', error);
     }
+  }
+
+  // update notes content
+  async updateNoteContent(noteName, noteContent) {
+    try {
+      const documentDirPath = await documentDir(); // Get documents directory PATH
+      const casesPath = await join(documentDirPath, 'cases'); // Create a directory PATH
+      const notePath = await join(casesPath, noteName);
+      
+      console.log("Updated note: " + notePath);
+      await writeFile(notePath, noteContent)
+
+    } catch(error) {
+      console.log("Could not update the notes content: " + error);
+    }
+
   }
 
   // Delete a note
