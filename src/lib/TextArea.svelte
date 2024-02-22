@@ -20,15 +20,22 @@
 ></div>
 
 <style>
-  .editable img {
-    max-width: 100%;
+
+  img {
+    max-width: 95%;
+    height: auto; /* maintain aspect ratio */
+    display: block; /* prevent inline gaps */
   }
 
   .text-area-style {
     height: 90%;
+    width: 100%;
     border: 1px solid #ccc;
     padding: 10px;
     text-align: left;
+    overflow: auto;
+    font-size: 14px;
+    box-sizing: border-box;
   }
 
   img {

@@ -3,12 +3,16 @@
   import TextArea from './lib/TextArea.svelte';
   import NoteLister from './lib/NoteLister.svelte';
   import { FolderHelper } from './inc/folderHelper.js';
-    import { onMount } from 'svelte';
+  import {TemplateHelper} from './inc/templateHelper.js';
+  import { onMount } from 'svelte';
 
   let noteName = '';
   let textAreaContent = '';
 
+  // Template helper initialization
+  const templateHelper = new TemplateHelper();
 
+  // Folder helper initialization
   const folderHelper = new FolderHelper();
   let notes = [];
 
@@ -71,7 +75,7 @@
   </div>
 
   <div class="functions">
-    <button class="new-template">Add Template</button>
+    <button class="new-template" on:click={async () => {textAreaContent = await templateHelper.applyTemplate()}}>Add Template</button>
   </div>
 
 </main>
