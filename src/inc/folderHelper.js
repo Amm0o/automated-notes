@@ -59,7 +59,7 @@ export class FolderHelper {
       const casesPath = await join(documentDirPath, 'cases'); // Create a directory PATH
       const notePath = await join(casesPath, noteName);
       
-      console.log("Updated note: " + notePath);
+      console.log("Updated note: " + notePath + " note name:" + noteName);
       await writeFile(notePath, noteContent)
 
     } catch(error) {

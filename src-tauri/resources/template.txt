@@ -1,1 +1,29 @@
-<div>Notes:</div><div><br></div><div>=========================================</div><div>ISSUE DESCRIPTION (and impacted Resources)</div><div>Cx:</div><div>&lt;Descirption&gt;</div><div>++++++++++++++++++++++</div><div>CASE NOTES SUMMARY (Historical data of steps taken &amp; results)</div><div>-------------------------------<br></div><div>&lt;CurrentDate&gt;</div><div>-------------------------------</div><div>++++++++++++++++++++++</div><div>MDE details:</div><div>Machine ID:</div><div>Org ID:</div><div>++++++++++++++++++++++</div><div>ACTION PLAN</div><div>&lt;What will be done next&gt;</div><div>++++++++++++++++++++++</div><div>NEXT ACTION PENDING ON (Customer/Engineer)&nbsp;</div><div>Customer</div><div>++++++++++++++++++++++</div><div>NEXT CONTACT &lt;NextBusinessDay&gt;</div><div>++++++++++++++++++++++</div><div><br></div>
+<div>Notes:</div> 
+<div class="section-divider">=========================================</div>
+<div>ISSUE DESCRIPTION (and impacted Resources)</div>
+<div>Cx:</div>
+<div>&lt;Description&gt;</div>
+<div class="section-divider">++++++++++++++++++++++</div>
+
+<section class="case-notes">
+  <h4>CASE NOTES SUMMARY (Historical data of steps taken &amp; results)</h2> 
+  <article class="case-note-entry"> 
+    <div class="entry-divider">-------------------------------</div> 
+    <div>&lt;CurrentDate&gt;</div> 
+    <div class="entry-divider">-------------------------------</div>
+  </article> 
+</section>
+
+<div class="section-divider">++++++++++++++++++++++</div>
+<div>MDE details:</div> 
+<div>Machine ID:</div> 
+<div>Org ID:</div> 
+<div class="section-divider">++++++++++++++++++++++</div>
+<div>ACTION PLAN</div> 
+<div>&lt;What will be done next&gt;</div> 
+<div class="section-divider">++++++++++++++++++++++</div>
+<div>NEXT ACTION PENDING ON (Customer/Engineer)&nbsp;</div> 
+<div>Customer</div>
+<div class="section-divider">++++++++++++++++++++++</div>
+<div>NEXT CONTACT &lt;NextBusinessDay&gt;</div>
+<div class="section-divider">++++++++++++++++++++++</div>

@@ -24,9 +24,9 @@
   <ul>
     {#each filteredNotes as note (note)}
       <li class="note-item">
-        <span on:click={() => loadNote(note)}>
+        <div on:click={() => loadNote(note)}>
           {note.split('.').slice(0, -1).join('.')}
-        </span>
+        </div>
         <button
           class="delete-button"
           on:click={() => {
@@ -51,6 +51,14 @@
     text-align: left;
   }
 
+
+  .note-item div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
+  }
+  
   .note-item {
     margin-bottom: 9px;
     cursor: pointer;
@@ -58,7 +66,11 @@
     border-radius: 10px;
     padding: 5px;
     transition: transform 0.3s ease;
+    display: flex;
+    width: calc(100% - 30px); /* Example: Adjust '30px' based on desired spacing */
   }
+
+
   .note-item:hover {
     transform: scale(1.05);
   }

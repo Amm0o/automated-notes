@@ -43,7 +43,7 @@
       return numA - numB;
     });
 
-    
+
 
   // Load all notes on load of the app
   onMount(async () => {
