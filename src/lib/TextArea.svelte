@@ -10,7 +10,6 @@
   // Handle update to content
   function handleInput(event) {
     content = event.target.innerHTML;
-    console.log("noteNAME: "  + noteName)
     folderHelper.updateNoteContent(noteName, content)
   }
 

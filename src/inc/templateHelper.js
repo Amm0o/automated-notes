@@ -35,8 +35,6 @@ export class TemplateHelper {
             let nextBusinessDay = getNextBusinessDay();
             templateContent = templateContent.replace(/NextBusinessDay/g, nextBusinessDay)
 
-            console.log('Template content:', templateContent);
-
             return templateContent;
         } catch (error) {
             console.error('There was an error reading the template file', error);
@@ -68,23 +66,15 @@ export class TemplateHelper {
         const nextContactRegex = /NEXT CONTACT &lt;([\d\/]+)&gt;/i; // Create a regex pattern
         const match = noteContent.match(nextContactRegex); // Match the pattern
 
-        console.log('Match:', match);
-        console.log("nextContactRegex:", nextContactRegex);
-
         if (match) {
             const existingNextContactDate = match[1]
-
-            console.log('Existing next contact date:', existingNextContactDate);
             
             // Convert to date for comparison
             const existingDate = new Date(existingNextContactDate).toLocaleDateString();
             const calculatedNextBusinessDate = getNextBusinessDay();
-            console.log('existingDate:', calculatedNextBusinessDate);
-            console.log('calculatedNextBusinessDate:', calculatedNextBusinessDate);
 
+            // Swaping the dates
             if (existingDate !== calculatedNextBusinessDate) {
-
-                console.log("We are here!")
                 updatedNote = updatedNote.replace(/NEXT CONTACT &lt;[\d\/]+&gt;/, `NEXT CONTACT &lt;${calculatedNextBusinessDate}&gt;`);
             }
         }
