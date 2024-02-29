@@ -13,6 +13,26 @@
     folderHelper.updateNoteContent(noteName, content)
   }
 
+  // Handle paste of images
+  function handlePaste(event) {
+  const items = (event.clipboardData || event.originalEvent.clipboardData).items;
+  for (let index in items) {
+    const item = items[index];
+    if (item.kind === 'file') {
+      const blob = item.getAsFile();
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        // Create an img element with src as the Data URL
+        const dataUrl = event.target.result;
+        document.execCommand('insertHTML', false, `<img src="${dataUrl}" style="max-width: 95%;">`);
+      };
+      reader.readAsDataURL(blob);
+      event.preventDefault(); // Prevent the default image paste behavior
+    }
+  }
+}
+
+
   // Handle new entry
   function addNewEntry(event) {
     if((event.ctrlKey || event.metaKey) && event.key === 'n') {
@@ -30,15 +50,10 @@
   bind:innerHTML={content}
   on:input={handleInput}
   on:keydown={addNewEntry}
+  on:paste={handlePaste}
 ></div>
 
 <style>
-
-  img {
-    max-width: 95%;
-    height: auto; /* maintain aspect ratio */
-    display: block; /* prevent inline gaps */
-  }
 
   .text-area-style {
     height: 90%;
@@ -51,10 +66,5 @@
     box-sizing: border-box;
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10rem;
-  }
   
 </style>
