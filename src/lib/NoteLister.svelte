@@ -16,7 +16,7 @@
 
   const loadNote = async note => {
     textAreaContent = await folderHelper.readNote(note);
-    noteName = note;   
+    noteName = note;
   };
 </script>
 
@@ -41,7 +41,7 @@
 <style>
   aside {
     width: 200px;
-    height: 100vh;
+    height: 50vh;
     overflow-y: auto;
     padding: 1em;
   }
@@ -58,7 +58,7 @@
     text-overflow: ellipsis;
     width: 90%;
   }
-  
+
   .note-item {
     margin-bottom: 9px;
     cursor: pointer;
