@@ -44,6 +44,12 @@
     });
 
 
+    // Need to handle case where I have a note selected and want to create a new note.
+    const handleNewNote = () => {
+      saveNote();
+      noteName = '';
+      textAreaContent = '';
+    };
 
   // Load all notes on load of the app
   onMount(async () => {
@@ -61,6 +67,7 @@
       type="text"
       bind:value={noteName}
       on:keydown={e => e.key === 'Enter' && saveNote()}
+      on:click={() => handleNewNote()}
     />
   </div>
 
