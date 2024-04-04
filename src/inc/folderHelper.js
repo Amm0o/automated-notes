@@ -27,6 +27,7 @@ export class FolderHelper {
 
   // Check if note exists
   async NoteChecker(noteName, notes) {
+    console.log('NoteChecker: ' + noteName);
     if (notes.includes(noteName)) {
       return true;
     } else {

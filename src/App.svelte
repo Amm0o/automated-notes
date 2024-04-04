@@ -22,8 +22,9 @@
 
   // Save a new note
   const saveNote = async () => {
-    const checker = await folderHelper.NoteChecker(noteName + '.html', notes);
-    if (checker) {
+    noteName = noteName.split('.')[0];
+    const checker = await folderHelper.NoteChecker(noteName + ".html", notes);
+    if (checker || noteName === '') {
       console.log('Note already exists');
     } else {
       await folderHelper.createNewNote(noteName, textAreaContent);
@@ -45,8 +46,8 @@
 
 
     // Need to handle case where I have a note selected and want to create a new note.
-    const handleNewNote = () => {
-      saveNote();
+    const  handleNewNote = async () => {
+      await saveNote();
       noteName = '';
       textAreaContent = '';
     };
@@ -67,7 +68,7 @@
       type="text"
       bind:value={noteName}
       on:keydown={e => e.key === 'Enter' && saveNote()}
-      on:click={() => handleNewNote()}
+      on:click={async () => handleNewNote()}
     />
   </div>
 
